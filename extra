@@ -1,0 +1,482 @@
+css:#main{
+    position: absolute;
+    top:35%;
+    left: 45%;
+}
+#side1{
+    height: 250px;
+    width: 150px;
+    position: absolute;
+    transform: translateX(0px) scale(1.5);
+    z-index: 999;
+    border: 2px solid blanchedalmond;
+    transition: all .5s;
+    top: 1700px;
+    left: 50px;
+}
+#side1 img{
+    height: 250px;
+    width: 150px;
+}
+#side2{
+    height: 250px;
+    width: 150px;
+    position: absolute;
+    transform: translateX(-100px) scale(1);
+    z-index: 9;
+    border: 2px solid blanchedalmond;
+    transition: all .5s;
+    top: 1700px;
+    left: 50px;
+}
+#side2 img{
+    height: 250px;
+    width: 150px;
+}
+#side3{
+    height: 250px;
+    width: 150px;
+    position: absolute;
+    transform: translateX(100px);
+    z-index: 9;
+    border: 2px solid blanchedalmond;
+    transition: all .5s;
+    top: 1700px;
+    left: 50px;
+}
+#side3 img{
+    height: 250px;
+    width: 150px;
+}
+#prev{
+    height: 30px;
+    width: 100px;
+    border: 2px solid blanchedalmond;
+    font-family: cursive;
+    font-size: 15px;
+    color: cornsilk;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+    padding-left: 20px;
+    float: left;
+    top: 2100px;
+    left: 300px;
+}
+#prev:hover{
+    cursor: pointer;
+}
+#next{
+    height: 30px;
+    width: 100px;
+    border: 2px solid blanchedalmond;
+    font-family: cursive;
+    font-size: 15px;
+    color: cornsilk;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+    top: 2100px;
+    right: 300px;
+}
+#next:hover{
+    cursor: pointer;
+}
+#side4{
+    height: 250px;
+    width: 150px;
+    position: absolute;
+    transform: translateX(200px);
+    z-index: 9;
+    border: 2px solid blanchedalmond;
+    transition: all .5s;
+}
+#side4 img{
+    height: 250px;
+    width: 150px;
+}
+#side5{
+    height: 250px;
+    width: 150px;
+    position: absolute;
+    transform: translateX(300px);
+    z-index: 9;
+    border: 2px solid blanchedalmond;
+    transition: all .5s;
+}
+#side5 img{
+    height: 250px;
+    width: 150px;
+}
+#side6{
+    height: 250px;
+    width: 150px;
+    position: absolute;
+    transform: translateX(300px);
+    z-index: 9;
+    border: 2px solid blanchedalmond;
+    transition: all .5s;
+}
+#side6 img{
+    height: 250px;
+    width: 150px;
+}
+#side7{
+    height: 250px;
+    width: 150px;
+    position: absolute;
+    transform: translateX(400px);
+    z-index: 9;
+    border: 2px solid blanchedalmond;
+    transition: all .5s;
+}
+#side7 img{
+    height: 250px;
+    width: 150px;
+}
+#side8{
+    height: 250px;
+    width: 150px;
+    position: absolute;
+    transform: translateX(500px);
+    z-index: 9;
+    border: 2px solid blanchedalmond;
+    transition: all .5s;
+}
+#side8 img{
+    height: 250px;
+    width: 150px;
+}
+
+
+
+ .testi-text{
+      background: snow;
+      padding: 40px 20px 40px 100px;
+      color: darkviolet;
+  }
+  .testi-text h4{
+      font-size: 30px;
+      margin-bottom: 30px;
+      font-family: Shrikhand;
+  }
+  .testi-text p{
+      font-family: Courgette;
+      line-height: 25px;
+      font-size: 20px;
+  }
+  .single-testimonial:hover .testi-text{
+      background: lightblue;
+      transition: 0.9s;
+  }
+  .testimonial-area div.owl-nav{
+      color: indigo;
+      display: inline-block;
+      font-size: 55px;
+      height: 60px;
+      margin-top: -30px;
+      text-align: center;
+      width: 40px;
+      transition: 0.3s;
+  }
+  .owl-prev,.owl-next{
+      position: absolute;
+  }
+  .owl-prev{
+      left: -20px;
+      top: 100px;
+  }
+  .owl-next{
+      right: -20px;
+      top: 100px;
+  }
+  
+
+  php:
+  <?php
+ini_set('display_errors', 1);
+print_r($_REQUEST);
+?>
+
+
+
+<?php
+    
+    $con = mysqli_connect('http://127.0.0.1:5500/insert.php','root','');
+    if(!$con)
+    {
+        echo 'Not connected to server';
+    }
+    if(!mysqli_select_db($con,'Salon'))
+    {
+        echo 'Database not selected';
+    }
+    $Name = $_POST['name'];
+    $Number = $_POST['phno'];
+    $Age = $_POST['age'];
+    $Gender = $_POST['gender'];
+    $Address = $_POST['address'];
+
+    $sql = "INSERT INTO Salon (Name,Number,Age,Gender,Address) VALUES ('$Name','$Number','$Age','$Gender','$Address')";
+    if(!mysqli_query($con,$sql))
+    {
+        echo "Not inserted";
+    }
+    else
+    {
+        echo "Inserted";
+    }
+    header("refresh:2;url=index.html");
+?>
+$name = $_POST['name'];
+$phno = $_POST['phno'];
+$age = $_POST['age'];
+$gender = $_POST['gender'];
+$address = $_POST['address'];
+
+//Database connection
+$conn = new mysqli('localhost','root','','Salon');
+if($conn->connect_error)
+{
+    die('Connection failed : ' .$conn->connect_error);
+}
+else
+{
+    $stmt = $conn->prepare("insert into form(Name,Number,Age,Gender,Address)
+    values('$name','$phno','$age','$gender','$address')");
+    $stmt->bind_param($name,$phno,$age,$gender,$address);
+    $stmt->execute();
+    echo "Registration done successfully...";
+    $stmt->close();
+    $conn->close();
+}
+
+
+
+html:
+  <div id="prev">Previous</div>
+       <br>
+       <div id="main">
+           <div id="side1">
+               <img src="threading.jpg">
+           </div>
+           <div id="side2">
+            <img src="waxing.jpg">
+        </div>
+        <div id="side3">
+            <img src="hair.jpg">
+        </div>
+       </div>
+       <br>
+       <div id="next">
+           NEXT
+       </div>
+<div id="side4">
+            <img src="threading.jpg">
+        </div>
+        <div id="side5">
+            <img src="bleach.jpg">
+        </div>
+        <div id="side6">
+            <img src="facial.jpg">
+        </div>
+        <div id="side7">
+            <img src="Manicure-Pedicure.jpg.jpg">
+        </div>
+        <div id="side8">
+            <img src="body massage.jpg.jpg">
+        </div>
+
+
+
+<div class="testimonial-area">
+    <div class="continer">
+     <div class="row">
+         <div class="col-md-12">
+             <div class="owl-carousel test-slides" id="testimonial-carousel">
+                <div class="item">
+               <div class="single-testimonial">
+                   <div class="testi-text">
+                       <h4>Erika Johnson</h4>
+                   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, quidem dicta sit possimus magni pariatur aliquam obcaecati. Veritatis debitis, adipisci perspiciatis expedita, reprehenderit iusto temporibus obcaecati ipsam ab repellendus quaerat.</p>
+                </div>
+                </div>
+             </div>
+
+             <div class="item">
+                <div class="single-testimonial">
+                    <div class="testi-text">
+                        <h4>Amita Sharma</h4>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, quidem dicta sit possimus magni pariatur aliquam obcaecati. Veritatis debitis, adipisci perspiciatis expedita, reprehenderit iusto temporibus obcaecati ipsam ab repellendus quaerat.</p>
+                 </div>
+                 </div>
+              </div>
+
+              <div class="item">
+                <div class="single-testimonial">
+                    <div class="testi-text">
+                        <h4>Shimoli Bhatt</h4>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, quidem dicta sit possimus magni pariatur aliquam obcaecati. Veritatis debitis, adipisci perspiciatis expedita, reprehenderit iusto temporibus obcaecati ipsam ab repellendus quaerat.</p>
+                 </div>
+                 </div>
+              </div>
+               </div>
+         </div>
+     </div>
+    </div>
+</div>
+
+js:
+<script>
+       $( function() {
+         $( "#datepicker" ).datepicker();
+        } );
+     </script>
+
+
+     book.html:
+     <!DOCTYPE html>
+<html>
+    <head>
+        <title>Book Online</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="utf-8">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" type="text/css" href="book.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="header-left">
+                <a href="companyinfo.html" class="logo" style="color: #ffffff;">The<span>Salon</span></a> 
+                <a href="login.html">Log in</a>
+                <a href="account.html">Create an account</a> 
+            </div>
+            <div class="header-right"> 
+                <a href="contactus.html">Contact us</a>
+                <a href="book.html">Book online</a>
+                <a href="specials.html">Specials</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Services
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                       <a href="facial.html">Facial</a>
+                       <a href="threading.html">Threading</a>
+                       <a href="bleach.html">Bleach</a>
+                       <a href="makeup.html">Make-up</a>
+                       <a href="hair.html">Hair</a>
+                       <a href="waxing.html">Waxing</a>
+                       <a href="manipedi.html">Manicure & Pedicure</a>
+                       <a href="bodymassage.html">Body Massage</a>
+                    </div>
+               </div>                                
+                <a href="index.html">Home</a>
+            </div>
+        </div>    
+        <h1 style="color: blanchedalmond;text-align: center;">Schedule your Salon appointment with us!</h1>
+        <form action="connect.php" method="POST" style="color: blanchedalmond;" id="book">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" ><br>
+            <label for="phno">Phone number:</label>
+            <input type="text" id="phno" name="phno" ><br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age"><br>
+            <label for="gender">Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+            <label for="address">Address:</label><br>
+            <textarea rows="4" cols="50" name="address" form="book"></textarea><br>
+            
+        <p style="color: blanchedalmond;font-size: 30px;">Date: <input type="text" id="date" name="date" ></p>
+     
+     <p style="color: blanchedalmond;font-size: 30px;">Time:
+        <input list="Time" name="Time">
+        <datalist id="Time">
+          <option value="5 PM">
+          <option value="5:30 PM">
+          <option value="6 PM">
+          <option value="6:30 PM">
+          <option value="7 PM">
+        </datalist>
+    </p>  
+    <p style="color: blanchedalmond;font-size: 30px;">Service/s you want:<br>
+    <input type="checkbox" name="services" value="facial" > Facial<br>
+    <input type="checkbox" name="services" value="threading" > Threading<br>
+    <input type="checkbox" name="services" value="bleach" > Bleach & De-Tan <br>
+    <input type="checkbox" name="services" value="make-up"> Make-up<br>
+    <input type="checkbox" name="services" value="hair" > Hair <br>
+    <input type="checkbox" name="services" value="waxing" > Waxing <br>
+    <input type="checkbox" name="services" value="manipedi" > Manicure & Pedicure <br>
+    <input type="checkbox" name="services" value="bodymassage" > Body Massage <br>
+    </p> 
+    <input type="submit" value="submit" style="box-sizing: border-box;background-color: blanchedalmond;color: darkblue;">
+    </form> 
+      
+</body>
+            <footer class="footer-distributed">
+                <h1 class="footer_head">The<span>Salon</span></h1>
+                <div class="footer-left">
+         
+                
+         
+                <p class="footer-links">
+                <a href="index.html">Home</a>
+            ·
+                <a href="#">Services</a>
+            ·
+                <a href="specials.html">Specials</a>
+            ·
+                <a href="book.html">Book Online</a>
+            ·
+                <a href="contactus.html">Contact Us</a>
+                </p>
+         
+                <p class="footer-company-name">The Salon,2020</p>
+                </div>
+         
+                <div class="footer-center">
+         
+                <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>Vellore Institute of Technology</span> Vellore,Tamil Nadu,India</p>
+                </div>
+         
+                <div>
+                <i class="fa fa-phone"></i>
+                <p>+91 6351786820</p>
+                </div>
+         
+                <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@company.com">thesalon@gmail.com</a></p>
+                </div>
+         
+                </div>
+         
+                <div class="footer-right">
+         
+                <p class="footer-company-about">
+                <span>About the company</span>
+                This is a beauty parlour with many facilities available.
+                </p>
+         
+                <div class="footer-icons">
+         
+                    <a href="https://www.facebook.com/TheSalon-103129611373386/"><i class="fa fa-facebook"></i></a>
+                    <a href="https://twitter.com/margi_the"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/the-salon-9994701a7/"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/margi__the_salon/?hl=en"><i class="fa fa-instagram"></i></a>
+         
+                </div>
+         
+                </div>
+         
+                </footer>
+    
+</html>

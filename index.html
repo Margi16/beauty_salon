@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <div class="main-container">
+    <head>
+        <title>The Salon</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
+        <script src="index.js"></script>
+        <script src="index_card.js"></script>
+        <link rel="stylesheet" type="text/css" href="swiper.min.css"> 
+    </head>
+    <body>
+        <script type="text/javascript" src="swiper.min.js"></script>
+        <script type="text/javascript" src="index_card.js"></script>
+        <div class="header">
+             <div class="header-left">
+                 <a href="companyinfo.html" class="logo" style="color: #ffffff;">The<span>Salon</span></a> 
+             </div>
+             <div class="header-right"> 
+                 <a href="contactus.html">Contact us</a>
+                 <a href="book_new.php">Book online</a>
+                 <div class="dropdown">
+                     <button class="dropbtn">Services
+                         <i class="fa fa-caret-down"></i>
+                     </button>
+                     <div class="dropdown-content">
+                        <a href="facial.html">Facial</a>
+                        <a href="threading.html">Threading</a>
+                        <a href="bleach.html">Bleach</a>
+                        <a href="makeup.html">Make-up</a>
+                        <a href="hair.html">Hair</a>
+                        <a href="waxing.html">Waxing</a>
+                        <a href="manipedi.html">Manicure & Pedicure</a>
+                        <a href="bodymassage.html">Body Massage</a>
+                     </div>
+                </div>                                
+                 <a href="index.html">Home</a>
+             </div>
+        </div>
+        <!--Slideshow container-->
+        <div class="slideshow-container">
+          <!--full-width images with number and caption text-->
+           <div class="mySlides fade">
+               <div class="numbertext">1/2</div>
+               <img src="background.jpg" style="width:100%">
+               <div class="text">Welcome to the Salon!</div>
+           </div>
+           <div class="mySlides fade">
+            <div class="numbertext">2/2</div>
+            <img src="backimg.jpg" style="width:100%">
+            <div class="text">Welcome to the Salon!</div>
+        </div>           
+        <!--Next and previous buttons-->
+        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+        <a class="next" onclick="plusSlides(1)">&#10095</a>
+        </div>
+        <br>
+        <!--the dots/circles-->
+        <div style="text-align: center;">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+        <p style="color: blanchedalmond;text-align: center;">Cick on the dots to see nice image slideshow of our salon!</p>
+        <h2>Welcome to the Salon!</h2>
+        <div class="content">
+        <p><img src="make-up.jpg" alt="Make-up">TheSalon is a chief full assistance
+         salon that offers a predominant standard of expert trim, shading, and hair 
+        care administrations. Known for our crude innovativeness, trendsetting style, 
+        and restrictive shading strategies, TheSalon have the absolute
+         generally compelling and looked for after colourists and beauticians in 
+         Vellore.</p>
+       </div>
+       <br>
+       <div class="content2">
+           <p><img src="waxing.jpg" alt="Waxing">Our group is truly outstanding in the business at making, 
+            mixing, and supporting shading to individualize a look that is constantly 
+            normal yet modern. Regardless of whether it's a serious articulation of your
+            own style or an amazing and stylish design proclamation, we're eager to work
+             with you to accomplish a look you love!!</p>
+       </div><br><br><br>
+       
+       
+       <div class="section">
+       <div class="services">
+       <h3>Our Services</h3> 
+       </div>
+       <br>
+       <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+          <div class="image">
+              <img src="facial.jpg">
+          </div>
+          <div class="details">
+            <h4><a href="facial.html">Facial</a></h4>
+          </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="image">
+            <img src="make-up.jpg">
+        </div>
+        <div class="details">
+            <h4><a href="makeup.html">Make-up</a></h4>
+        </div>
+    </div>
+    <div class="swiper-slide">
+        <div class="image">
+            <img src="waxing.jpg">
+        </div>
+        <div class="details">
+            <h4><a href="waxing.html">Waxing</a></h4>
+        </div>
+    </div>
+    <div class="swiper-slide">
+        <div class="image">
+            <img src="hair.jpg">
+        </div>
+        <div class="details">
+            <h4><a href="hair.html">Hair</a></h4>
+        </div>
+    </div>
+    <div class="swiper-slide">
+        <div class="image">
+            <img src="threading.jpg">
+        </div>
+        <div class="details">
+            <h4><a href="threading.html">Threading</a></h4>
+        </div>
+    </div>
+    <div class="swiper-slide">
+        <div class="image">
+            <img src="bleach.jpg">
+        </div>
+        <div class="details">
+            <h4><a href="bleach.html">Bleach &  De-Tan</a></h4>
+        </div>
+    </div>
+    <div class="swiper-slide">
+        <div class="image">
+            <img src="body massage.jpg">
+        </div>
+        <div class="details">
+            <h4><a href="bodymassage.html">Body Massage</a></h4>
+        </div>
+    </div>
+    <div class="swiper-slide">
+        <div class="image">
+            <img src="Manicure-Pedicure.jpg">
+        </div>
+        <div class="details">
+            <h4><a href="manipedi.html">Manicure & Pedicure</a></h4>
+        </div>
+    </div>
+   </div>
+  </div> 
+  <p style="text-align: center;color: blanchedalmond;">Hold the image and swipe to know about more of our services!</p>
+  <p style="text-align: center;color: blanchedalmond;">Click on the name of the services that you are interested in!</p>
+<br>
+<br>
+<br>
+<h2 style="text-align: center; font-family: cursive;">Testimonials</h2>
+<div class="container">
+    <div class="box">
+        <p>Great place! I have been having my hair done here for over 10 years. Great cuts/styles, colors , and very personal customer service. Highly recommended!</p>
+        <h4>Apexa Bhatt</h4>
+    </div>
+    <div class="box">
+        <p>Great experience at TheSalon, wonderful customer service, friendly people and amazing styles!Have found satisfaction after such a long time!!</p>
+        <h4>Shimoli Bhatt</h4>
+    </div>
+    <div class="box">
+        <p>Great place and service. TheSalon is a great salon, they do my hair every month and I have to admit, my hair is hard to handle but they do an awesome job!!!</p>
+        <h4>Dipti Bhatt</h4>
+    </div>
+</div>
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 30,
+        stretch: 90,
+        depth: 80,
+        modifier: 12,
+        slideShadows : true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+    
+    </script>
+    
+    <footer class="footer-distributed">
+        <h1 class="footer_head">The<span>Salon</span></h1>
+		<div class="footer-left">
+ 
+		
+ 
+		<p class="footer-links">
+		<a href="index.html">Home</a>
+        |
+		<a href="book_new.php">Book Online</a>
+        |
+		<a href="contactus.html">Contact Us</a>
+		</p>
+ 
+		<p class="footer-company-name">The Salon,2020</p>
+		</div>
+ 
+		<div class="footer-center">
+ 
+		<div>
+		<i class="fa fa-map-marker"></i>
+		<p><span>Vellore Institute of Technology</span> Vellore,Tamil Nadu,India</p>
+		</div>
+ 
+		<div>
+		<i class="fa fa-phone"></i>
+		<p>+91 6351786820</p>
+		</div>
+ 
+		<div>
+		<i class="fa fa-envelope"></i>
+		<p><a href="mailto:support@company.com">thesalonvellore@gmail.com</a></p>
+		</div>
+ 
+		</div>
+ 
+		<div class="footer-right">
+ 
+		<p class="footer-company-about">
+		<span>About the company</span>
+        This is a beauty parlour with many facilities available. This is just a project,not a real salon.
+		</p>
+ 
+		<div class="footer-icons">
+ 
+		<a href="https://www.facebook.com/TheSalon-103129611373386/"><i class="fa fa-facebook"></i></a>
+		<a href="https://twitter.com/margi_the"><i class="fa fa-twitter"></i></a>
+		<a href="https://www.linkedin.com/in/the-salon-9994701a7/"><i class="fa fa-linkedin"></i></a>
+		<a href="https://www.instagram.com/margi__the_salon/?hl=en"><i class="fa fa-instagram"></i></a>
+ 
+		</div>
+ 
+		</div>
+ 
+		</footer>
+</div>
+</body>
+</html>

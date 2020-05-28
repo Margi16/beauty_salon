@@ -1,0 +1,8 @@
+.book{
+    background-color: bisque;
+    box-sizing: border-box;
+}
+.book:hover{
+    background-color: coral;
+    color: cornflowerblue;
+}
